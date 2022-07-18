@@ -3,7 +3,7 @@ import { Navbar, Footer, Welcome, Services } from "./components";
 const App = () => {
 
   return (
-    <div className="flex h- overflow-hidden bg-[#1f1c1c]">
+    <div className="flex bg-[#1f1c1c]">
       <Navbar />
       <Services />
       
