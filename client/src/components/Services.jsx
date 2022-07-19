@@ -4,8 +4,9 @@ const Services = () => {
     const connectWallet= ()=>{
         
     }
-
+    const candidates = ["noel","akash","aromal"];
     return(
+        
         <div className="w-full">
             <div>
                 <div className="relative m-10 text-2xl bg-honey-brown text-white h-[72px] font-semibold  rounded-xl  p-5 pr-8">
@@ -15,9 +16,10 @@ const Services = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col justify-center h-3/4 m-10 mb-5 text-2xl bg-honey-brown text-honey-gold font-semibold rounded-xl">
-                <div className="">
-                    <Candidate />
+            <div className="flex flex-col justify-center items-center h-3/4 m-10 mb-5 text-2xl bg-honey-brown text-honey-gold font-semibold rounded-xl">
+                <div className="flex flex-wrap justify-content items-center">
+                    {candidates.map((candidate)=>(<Candidate candidate={candidate}/>))}
+
                 </div>
             </div>
             
