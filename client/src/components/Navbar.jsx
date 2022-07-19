@@ -1,18 +1,19 @@
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     return(
         <div className="relative border-solid border-r-[1px] w-[320px] border-opacity-80 border-r-honey-gold bg-honey-brown p-5 h-screen text-honey-gold">
             <div className="justify-center text-center">
-                <a href="/" className="text-5xl font-semibold border-solid border-b-[1px] p-5 border-b-honey-gold  ">ethVote</a>
+                <Link href="/" className="text-5xl font-semibold border-solid border-b-[1px] p-5 border-b-honey-gold  ">ethVote</Link>
             </div>
             <div className="justify-center text-center items-center">
                 <div className="text-xl p-1 pt-[80px]">
-                    <a href="/Vote" className="p-1 font-semibold px-[100px] hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Vote</a>
+                    <Link href="/" className="p-1 font-semibold px-[100px] hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Vote</Link>
                 </div>
                 <div className="text-xl p-1 pt-[80px]">
-                    <a href="/Result" className="p-1 px-[94px] w-full font-semibold hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Result</a>
+                    <Link href="/Result" className="p-1 px-[94px] w-full font-semibold hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Result</Link>
                 </div>
             </div>
-
         </div>
     )
 }

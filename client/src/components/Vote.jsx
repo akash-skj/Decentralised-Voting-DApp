@@ -1,6 +1,6 @@
 import {Candidate} from "./" ;
 
-const Services = () => {
+const Vote = () => {
 
     const candidates = ["Noel","Akash",];
     return(
@@ -17,6 +17,6 @@ const Services = () => {
     )
 }
 
-export default Services;
+export default Vote;
 
 //voters.map((voter,index)=><Voter voter={voter}/>)

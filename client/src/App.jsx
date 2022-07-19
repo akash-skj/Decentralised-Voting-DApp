@@ -1,4 +1,4 @@
-import { Navbar, Footer, Welcome, Services, Connect } from "./components";
+import { Navbar, Footer, Welcome, Vote, Connect, Result } from "./components";
 import { BrowserRouter, Route, Routes } from"react-router-dom"
 
 const App = () => {
@@ -9,7 +9,10 @@ const App = () => {
         <Navbar />
         <div className="w-full">
           <Connect />
-          <Services />
+          <Routes>
+            <Route path='/' element={<Vote />}/>
+            <Route path='/Result' element={<Result />}/>
+          </Routes>
         </div>
       </div>
     </BrowserRouter>
