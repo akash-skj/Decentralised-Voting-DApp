@@ -2,14 +2,14 @@ const Navbar = () => {
     return(
         <div className="relative border-solid border-r-[1px] w-[320px] border-opacity-80 border-r-honey-gold bg-honey-brown p-5 h-screen text-honey-gold">
             <div className="justify-center text-center">
-                <h1 className="text-4xl font-semibold border-solid border-b-[1px] p-10 border-b-honey-gold  ">ethVote</h1>
+                <a href="/" className="text-5xl font-semibold border-solid border-b-[1px] p-5 border-b-honey-gold  ">ethVote</a>
             </div>
-            <div className="justify-center items-center">
+            <div className="justify-center text-center items-center">
                 <div className="text-xl p-1 pt-[80px]">
-                    <button className="p-1 pr-3 w-full font-semibold pl-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Home</button>
+                    <a href="/Vote" className="p-1 font-semibold px-[100px] hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Vote</a>
                 </div>
-                <div className="text-lg p-1 pt-[80px]">
-                    <button className="p-1 pr-3 w-full font-semibold pl-3 hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Admin</button>
+                <div className="text-xl p-1 pt-[80px]">
+                    <a href="/Result" className="p-1 px-[94px] w-full font-semibold hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Result</a>
                 </div>
             </div>
 
