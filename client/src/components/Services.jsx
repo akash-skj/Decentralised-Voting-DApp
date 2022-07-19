@@ -4,7 +4,7 @@ const Services = () => {
     const connectWallet= ()=>{
         
     }
-    const candidates = ["noel","akash","aromal"];
+    const candidates = ["Noel","Akash",];
     return(
         
         <div className="w-full">
