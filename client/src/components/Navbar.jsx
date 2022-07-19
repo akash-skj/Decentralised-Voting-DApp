@@ -11,10 +11,13 @@ const Navbar = () => {
             <div>
                 <div className="justify-center text-center items-center">
                     <div className="text-xl p-1 pt-[80px]">
-                        <Link to="/" className="p-1 font-semibold px-[100px] hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Vote</Link>
+                        <Link to="/ " className="p-1 font-semibold px-[100px] hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Vote</Link>
+                    </div>
+                    <div className="text-xl p- pt-[80px]">
+                        <Link to="/Result" className="p-1 px-[94px] w-full font-semibold hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Result</Link>
                     </div>
                     <div className="text-xl p-1 pt-[80px]">
-                        <Link to="/Result" className="p-1 px-[94px] w-full font-semibold hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Result</Link>
+                        <Link to="/Admin" className="p-1 px-[94px] w-full font-semibold hover:bg-white hover:bg-opacity-5 rounded-lg transition duration-100">Admin</Link>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 const Connect= ()=>{
     const connectWallet= ()=>{
-        
+        console.log("Connect");
     }
     return(
         <div className="w-full">
