@@ -1,8 +1,14 @@
 import {Candidate} from "./" ;
+import { TransactionContext } from "../context/TransactionContext";
+import React , { useContext } from "react";
+
 
 const Vote = () => {
 
-    const candidates = ["Noel","Akash",];
+    const { value } = useContext(TransactionContext);
+    console.log(value);
+
+    const candidates = ["Name","Name"];
     return(
         
         <div className="">
@@ -17,5 +23,3 @@ const Vote = () => {
 }
 
 export default Vote;
-
-//voters.map((voter,index)=><Voter voter={voter}/>)

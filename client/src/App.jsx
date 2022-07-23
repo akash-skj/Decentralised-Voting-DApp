@@ -1,6 +1,7 @@
 import { Navbar, Footer, Welcome, Admin, Vote, Connect, Result } from "./components";
 import { BrowserRouter, Route, Routes } from"react-router-dom"
 
+
 const App = () => {
 
   return (

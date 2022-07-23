@@ -1,4 +1,14 @@
+import { TransactionContext } from "../context/TransactionContext";
+import React , { useContext } from "react";
+import { useLinkClickHandler } from "react-router-dom";
+
 const Result= () => {
+
+    const { value } = useContext(TransactionContext);
+    
+    const click=()=>{
+        console.log(value);
+    }
 
     return(
         <div>
@@ -9,7 +19,7 @@ const Result= () => {
                 <div className="m-5">
                     <h1 className="text-black text-3xl justify-start">Winner: </h1>
                 </div>
-                <button className="text-honey-gold text-center bg-honey-brown rounded-lg p-2" >Result</button>    
+                <button className="text-honey-gold text-center bg-honey-brown rounded-lg p-2" onClick={click} >Result</button>    
             </div>
 
                 </div>
