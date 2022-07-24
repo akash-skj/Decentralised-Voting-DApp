@@ -6,6 +6,7 @@ import React , { useContext } from "react";
 const Vote = () => {
 
     const { value } = useContext(TransactionContext);
+    
     console.log(value);
 
     const candidates = ["Name","Name"];

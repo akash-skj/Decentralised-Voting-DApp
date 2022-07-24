@@ -1,4 +1,4 @@
-import { Navbar, Footer, Welcome, Admin, Vote, Connect, Result } from "./components";
+import { Navbar, Footer, Admin, Vote, Connect, Result } from "./components";
 import { BrowserRouter, Route, Routes } from"react-router-dom"
 
 

@@ -15,12 +15,20 @@ const getEthereumContract= ()=>{
     const signer = provider.getSigner();
     const TransactionContract= new ethers.Contract(contractAddress,contractABI,signer);
 
-    console.log({provider,signer,TransactionContract})
+    console.log({provider,signer,TransactionContract});
 }
 
 export const TransactionProvider =({ children })=>{
     
     const [currentAccount, setCurrentAccount] = useState("");
+    const [candidateData, setCandidateData] = useState({candidateName:''});
+    const [voterData, setVoterData] = useState({address:'', voterName:''});
+
+    const handleChange=(e,name)=>{
+        setCandidateData((prevState)=>({...prevState,[name]:e.target.value}));
+       // setVoterData((prevState)=>({...prevState,[name]:e.target.value}));
+    }
+    
 
     const checkIfWalletIsConnected = async ()=> {
         try {
@@ -62,8 +70,32 @@ export const TransactionProvider =({ children })=>{
         }
     }
 
-    const sendTransaction= ()=>{
-        
+    const sendTransactionCandidate= ()=>{
+        try {
+            if(!ethereum) return alert("Please install Metamask");
+
+            const{ candidateName } = candidateData;
+            getEthereumContract();
+
+        } catch (error) {
+            console.log(error);
+
+            throw new Error("No Ethereum object");
+        }
+    }
+    
+    const sendTransactionVoter= ()=>{
+        try {
+            if(!ethereum) return alert("Please install Metamask");
+
+            const{ voterName, voterAddress } = voterData;
+            getEthereumContract();
+
+        } catch (error) {
+            console.log(error);
+
+            throw new Error("No Ethereum object");
+        }
     }
 
     useEffect(()=>{
@@ -72,7 +104,7 @@ export const TransactionProvider =({ children })=>{
     },[]);
 
     return(
-            <TransactionContext.Provider value={{ connectWallet, currentAccount }}>
+            <TransactionContext.Provider value={{ connectWallet, currentAccount,candidateData, setCandidateData, voterData, setVoterData, handleChange, sendTransactionVoter, sendTransactionCandidate}}>
                 {children}
             </TransactionContext.Provider>
         )
