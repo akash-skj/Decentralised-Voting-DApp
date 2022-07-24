@@ -10,24 +10,23 @@ const Admin= ()=>{
     const { candidateData, voterName, address , voterData, candidateName, handleChangeCandidate, handleChangeVoter, sendTransactionVoter, sendTransactionCandidate } = useContext(TransactionContext);
 
     const handleSubmitCandidate = (e)=> {
-        console.log("Candidate handle");
-        //const{ candidateName } = candidateData;
+        const{ candidateName } = candidateData;
         console.log(candidateData);
         e.preventDefault();
+        candidateData.candidateName="akash";
+        console.log(candidateData);
 
         if(!candidateName) return;
-        
         sendTransactionCandidate();
     }
     const handleSubmitVoter = (e)=> {
         console.log("Voter handle");
         
-        const{ address, voterName } = voterData;
-        e.preventDefault();
+        const { address, voterName } = voterData;
         console.log(voterData);
+        e.preventDefault();
 
         if(!voterName||!address) return;
-        console.log("voterName");
         sendTransactionVoter();
     }
 

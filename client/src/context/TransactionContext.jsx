@@ -21,8 +21,8 @@ const getEthereumContract= ()=>{
 export const TransactionProvider =({ children })=>{
     
     const [currentAccount, setCurrentAccount] = useState("");
-    const [candidateData, setCandidateData] = useState({candidateName:''});
-    const [voterData, setVoterData] = useState({address:'', voterName:''});
+    const [candidateData, setCandidateData] = useState({ candidateName:'' });
+    const [voterData, setVoterData] = useState({ address:'', voterName:'' });
 
     const handleChangeCandidate=(e,name)=>{
         setCandidateData((prevState)=>({...prevState,[name]:e.target.value}));
