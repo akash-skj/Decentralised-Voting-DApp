@@ -24,9 +24,14 @@ export const TransactionProvider =({ children })=>{
     const [candidateData, setCandidateData] = useState({candidateName:''});
     const [voterData, setVoterData] = useState({address:'', voterName:''});
 
-    const handleChange=(e,name)=>{
+    const handleChangeCandidate=(e,name)=>{
         setCandidateData((prevState)=>({...prevState,[name]:e.target.value}));
-       // setVoterData((prevState)=>({...prevState,[name]:e.target.value}));
+        console.log("handle");
+    }
+
+    const handleChangeVoter=(e,name)=>{
+        setVoterData((prevState)=>({...prevState,[name]:e.target.value}));
+        console.log("handle");
     }
     
 
@@ -104,7 +109,7 @@ export const TransactionProvider =({ children })=>{
     },[]);
 
     return(
-            <TransactionContext.Provider value={{ connectWallet, currentAccount,candidateData, setCandidateData, voterData, setVoterData, handleChange, sendTransactionVoter, sendTransactionCandidate}}>
+            <TransactionContext.Provider value={{ connectWallet, currentAccount,candidateData, setCandidateData, voterData, setVoterData, handleChangeCandidate, handleChangeVoter, sendTransactionVoter, sendTransactionCandidate}}>
                 {children}
             </TransactionContext.Provider>
         )
