@@ -3,25 +3,22 @@ import React , { useContext } from "react";
 
 const Admin= ()=>{
 
-    var count=0;
-    var candidateNames=[];
-
-    const { candidateName, voterName, voterAddress, handleChangeCandidateName, handleChangeVoterName, handleChangeVoterAddress, sendTransactionCandidate ,sendTransactionVoter} = useContext(TransactionContext);
+    const { candidateName, candidateNames, voterName, voterAddress, handleChangeCandidateName, handleChangeVoterName, handleChangeVoterAddress, sendTransactionCandidate ,sendTransactionVoter, setCandidateNames, startVote, endVote} = useContext(TransactionContext);
 
     const handleSubmitCandidate = (e)=> {
 
-        candidateNames[count]=candidateName;
-        count=count+1;
-        console.log(count);
-        
+        setCandidateNames(current => [...current,candidateName]);
+
         console.log(candidateName);
         console.log(candidateNames);
+        console.log("2nd name"+candidateNames[1]);
         
         e.preventDefault();
 
         if(!candidateName) return;
         sendTransactionCandidate();
     }
+    
     const handleSubmitVoter = (e)=> {
         console.log("Voter handle");
         
@@ -32,8 +29,12 @@ const Admin= ()=>{
         sendTransactionVoter();
     }
 
-    const startVote=()=>{
-        console.log(" Vote started! ")
+    const handleSubmitStartVote = () =>{
+        startVote();
+    }
+
+    const handleSubmitEndVote = () =>{
+        endVote();
     }
 
     return(
@@ -51,8 +52,8 @@ const Admin= ()=>{
                     <button className="bg-honey-gold text-white p-1 px-2 w-[500px] rounded-lg mb-5 hover:bg-opacity-80 transition duration-100" onClick={handleSubmitCandidate}>Add Candidate</button>
                     
                     <div className="flex flex-row">
-                        <button className="bg-honey-gold text-white p-1 px-2 w-[230px] mx-5 rounded-lg mb-5 hover:bg-opacity-80 transition duration-100" onClick={startVote}>Start Vote</button>
-                        <button className="bg-honey-gold text-white p-1 px-2 w-[230px] mx-5 rounded-lg mb-5 hover:bg-opacity-80 transition duration-100">End Vote</button>
+                        <button className="bg-honey-gold text-white p-1 px-2 w-[230px] mx-5 rounded-lg mb-5 hover:bg-opacity-80 transition duration-100" onClick={handleSubmitStartVote}>Start Vote</button>
+                        <button className="bg-honey-gold text-white p-1 px-2 w-[230px] mx-5 rounded-lg mb-5 hover:bg-opacity-80 transition duration-100" onClick={handleSubmitEndVote}>End Vote</button>
                     </div>
                 </div>
             </div>
