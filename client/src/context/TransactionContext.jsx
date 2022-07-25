@@ -21,10 +21,28 @@ const getEthereumContract= ()=>{
 export const TransactionProvider =({ children })=>{
     
     const [currentAccount, setCurrentAccount] = useState("");
-    const [candidateData, setCandidateData] = useState({ candidateName:'' });
-    const [voterData, setVoterData] = useState({ address:'', voterName:'' });
+    const [candidateName, setCandidateName] = useState("");
+    const [voterName, setVoterName] = useState("");
+    const [voterAddress, setVoterAddress] = useState("");
+    //const [candidateData, setCandidateData] = useState({ candidateName:'' });
+    //const [voterData, setVoterData] = useState({ address:'', voterName:'' });
 
-    const handleChangeCandidate=(e,name)=>{
+    const handleChangeCandidateName=(e)=>{
+        setCandidateName(e.target.value);
+        console.log("handle");
+    }
+
+    const handleChangeVoterName=(e)=>{
+        setVoterName(e.target.value);
+        console.log("handle");
+    }
+
+    const handleChangeVoterAddress=(e)=>{
+        setVoterAddress(e.target.value);
+        console.log("handle");
+    }
+
+    /*const handleChangeCandidate=(e,name)=>{
         setCandidateData((prevState)=>({...prevState,[name]:e.target.value}));
         console.log("handle");
     }
@@ -32,7 +50,9 @@ export const TransactionProvider =({ children })=>{
     const handleChangeVoter=(e,name)=>{
         setVoterData((prevState)=>({...prevState,[name]:e.target.value}));
         console.log("handle");
-    }
+    }*/
+
+
     
 
     const checkIfWalletIsConnected = async ()=> {
@@ -78,8 +98,8 @@ export const TransactionProvider =({ children })=>{
     const sendTransactionCandidate= ()=>{
         try {
             if(!ethereum) return alert("Please install Metamask");
-
-            const{ candidateName } = candidateData;
+            console.log("Context: "+candidateName);
+            //const{ candidateName } = candidateData;
             getEthereumContract();
 
         } catch (error) {
@@ -88,12 +108,12 @@ export const TransactionProvider =({ children })=>{
             throw new Error("No Ethereum object");
         }
     }
-    
+
     const sendTransactionVoter= ()=>{
         try {
             if(!ethereum) return alert("Please install Metamask");
-
-            const{ voterName, voterAddress } = voterData;
+            console.log("Context: "+voterName,voterAddress);
+            //const{ candidateName } = candidateData;
             getEthereumContract();
 
         } catch (error) {
@@ -109,7 +129,7 @@ export const TransactionProvider =({ children })=>{
     },[]);
 
     return(
-            <TransactionContext.Provider value={{ connectWallet, currentAccount,candidateData, setCandidateData, voterData, setVoterData, handleChangeCandidate, handleChangeVoter, sendTransactionVoter, sendTransactionCandidate}}>
+            <TransactionContext.Provider value={{ connectWallet, currentAccount,candidateName, setCandidateName, voterName, setVoterName, voterAddress, setVoterAddress, handleChangeCandidateName, handleChangeVoterName, handleChangeVoterAddress, sendTransactionVoter, sendTransactionCandidate}}>
                 {children}
             </TransactionContext.Provider>
         )
