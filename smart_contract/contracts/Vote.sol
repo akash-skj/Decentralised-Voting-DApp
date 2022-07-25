@@ -1,6 +1,7 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
 
-contract Election {
+contract Vote {
     // Model a Candidate
     struct Candidate {
         uint256 id;
